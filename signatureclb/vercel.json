@@ -1,0 +1,23 @@
+{
+  "buildCommand": "next build",
+  "installCommand": "npm ci",
+  "outputDirectory": ".next",
+  "env": {
+    "NEXT_PUBLIC_PUSHER_KEY": "@NEXT_PUBLIC_PUSHER_KEY",
+    "NEXT_PUBLIC_PUSHER_CLUSTER": "@NEXT_PUBLIC_PUSHER_CLUSTER",
+    "PUSHER_APP_ID": "@PUSHER_APP_ID",
+    "PUSHER_SECRET": "@PUSHER_SECRET",
+    "NEXT_PUBLIC_API_URL": "@NEXT_PUBLIC_API_URL"
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, must-revalidate"
+        }
+      ]
+    }
+  ]
+}
